@@ -340,6 +340,14 @@ app.listen(port, (error) => {
     
     app.use(express.json());
     app.use(cors());
+
+    require('dotenv').config();
+
+const mongoUri = process.env.MONGO_URI;
+
+console.log(`Mongo URI: ${mongoUri}`);
+console.log(`Server running on port: ${port}`);
+
     
     // Database connection with MongoDB
     mongoose
